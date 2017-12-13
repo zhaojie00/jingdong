@@ -95,6 +95,32 @@ $(function(){
 		}
 
 //console.log($(document.body).scrollTop()+$(document.documentElement).scrollTop());
+	$('#ce-left li').hover(function(){
 
+	})
+	/*轮播图*/
+	$(function(){
+		var k = 0;
+		var timer = null;
+		var long = $('#lunbotu .bo li').length;
+		$('#lunbotu .dian span').hover(function(){
+			var k = $(this).index();
+			clearInterval(timer);
+			$(this).addClass('the').siblings().removeClass('the');
+			$('#lunbotu .bo li').eq(k).fadeIn().siblings().fadeOut();
+		}).mouseout(function(){autoPlay();});
+
+		clearInterval(timer);
+		autoPlay();
+		function autoPlay(){
+			var k = 0;
+			clearInterval(timer);
+			timer = setInterval(function(){
+				k<long-1?k++:k=0;
+				$('#lunbotu .dian span').eq(k).addClass('the').siblings().removeClass('the');
+				$('#lunbotu .bo li').eq(k).fadeIn().siblings().fadeOut();
+			},2500);
+		}
+	})
 
 })
