@@ -448,7 +448,9 @@ text-decoration:none;
 /*lunbo*/
 .lunbotu{
 	position: relative;
-	
+	overflow: hidden;
+	width:670px;
+	height:240px;
 	/*overflow: hidden;*/
 }
 .lunbotu .bo{
